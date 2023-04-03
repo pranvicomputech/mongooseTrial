@@ -1,0 +1,1 @@
+module.exports = "mongodb+srv://admin:admin@mdb.vtkja.mongodb.net/nodedb"

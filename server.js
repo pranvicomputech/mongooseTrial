@@ -2,8 +2,8 @@
 const express = require("express")
 let bodyparser = require('body-parser')
 let cors = require('cors')
-//import dotenv
-const dotenv = require("dotenv")
+//import url
+let url = require('./url')
 //import mongoose
 const mongoose = require("mongoose")
 //create app instance
@@ -16,11 +16,9 @@ app.use(bodyparser.urlencoded({ extended: false }))
 app.use(cors())
 //create port
 let port = 8080
-//configure dotenv
-dotenv.config()
 //////////////////////////////////////////
 //connect to mongodb
-mongoose.connect(process.env.DB_CONNECT).then(() => {
+mongoose.connect(url).then(() => {
     console.log('Connection succees')
 }, () => {
     console.log('Connection Failed')
